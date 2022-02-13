@@ -1,0 +1,118 @@
+/**
+Core Styles
+ */
+ $margin-bottom: 10px;
+ $middle: auto 0;
+ $two: 2%;
+
+%turn-off-mvt-main {
+	margin-bottom: initial;
+}
+ %turn-off-bamboo {
+	border-left: none;
+	margin-top: initial;
+ }
+ %turn-off-wisteria {
+	border-radius: initial;
+	box-shadow: initial;
+ }
+ %turn-off-birch {
+	border: initial;
+	box-shadow: initial;
+ }
+
+.wp-block-create-block-magnolia-about {
+	margin-bottom: initial;
+	* {
+		margin-bottom: $margin-bottom;
+	}
+}
+
+/***
+Sidebar Block Styles
+**/
+.sidebar {
+	.wp-block-create-block-magnolia-about {
+		padding: 5%;
+		img {
+			max-width: 145px;
+			margin: 0 auto;
+		   }
+		h2, p {
+			text-align: center;
+		}
+	}
+}
+/***
+Post Block Styles
+**/
+.mvt-content {
+	.wp-block-create-block-magnolia-about {
+		padding: 5% 2%;
+		display: flex;
+        flex-flow: row wrap;
+		.wp-block-image {
+			flex: 0 0 15%;
+			margin: $middle;
+			margin-left: $two;
+			padding-bottom: $two;
+		}
+		img {
+			max-width: 110px;
+			margin: $middle;
+		   }
+		   h2 {
+			flex: 0 0 75%;
+			margin: $middle;
+			margin-left: $two;
+			padding-bottom: $two;
+		   }
+		   p {
+			flex: 0 0 85%;
+			margin-left: 7%;
+			text-align: justify;
+		   }
+
+	}
+
+}
+
+/***
+Trellis Theme Styles
+**/
+body.mediavine-trellis .mvt-content {
+	.wp-block-create-block-magnolia-about {
+		@extend %turn-off-wisteria;
+		@extend %turn-off-bamboo;
+		@extend %turn-off-birch;
+		border: 1px solid #e1e1e1;
+		margin-bottom: 20px;
+	}
+}
+body.wisteria-trellis .mvt-content {
+	.wp-block-create-block-magnolia-about {
+		@extend %turn-off-mvt-main;
+		@extend %turn-off-bamboo;
+		@extend %turn-off-birch;
+		border-radius: 0.25rem;
+		box-shadow: -5px 5px 25px 5px rgb(0 0 0 / 10%);
+	}
+}
+body.bamboo .mvt-content {
+	.wp-block-create-block-magnolia-about {
+		@extend %turn-off-mvt-main;
+		@extend %turn-off-wisteria;
+		@extend %turn-off-birch;
+		border-left: thin solid #e1e1e1;
+		margin-top: 24px;
+	}
+}
+body.birch-trellis .mvt-content {
+	.wp-block-create-block-magnolia-about {
+		@extend %turn-off-mvt-main;
+		@extend %turn-off-wisteria;
+		@extend %turn-off-bamboo;
+		border: 2px solid inherit;
+		box-shadow: -15px 15px 0 0 var(--mv-trellis-color-link, #000);
+	}
+}
